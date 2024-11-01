@@ -24,6 +24,10 @@ it will install chocolatey.
 5. This will open up the development server at http://localhost:3000/ and you'll see the react app running.
    Runtime environment is of course the NodeJS. We don't need this at the server side, only client side needed.
 
+Installing Material UI:
+
+- Run this: npm install @mui/material @emotion/react @emotion/styled
+
 Notes:
 
 - The .js files you see in src folder are special type and not the typical js files.
