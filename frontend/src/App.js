@@ -26,7 +26,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" color="primary">
+    <AppBar position="static" sx={{ backgroundColor: '#2A918B' }}>
       <Toolbar>
         {/* Logo and Company Name */}
         <Box display="flex" alignItems="center" flexGrow={1}>
@@ -99,7 +99,7 @@ const CountrySelector = () => {
         </Select>
       </FormControl>
 
-      <Button variant="contained" color="primary" onClick={handleSubmit} sx={{ width: '11%'}}>
+      <Button variant="contained" color="primary" onClick={handleSubmit} sx={{ width: '11%', backgroundColor: '#2A918B'}}>
         Submit
       </Button>
     </Box>
