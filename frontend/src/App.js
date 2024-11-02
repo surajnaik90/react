@@ -63,7 +63,8 @@ const CountrySelector = () => {
   };
 
   const handleSubmit = () => {
-    alert(`Selected Country: ${country}`);
+    const pdfUrl = `https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf`; // Path to PDF in the public folder
+    window.open(pdfUrl, '_blank');
   };
 
   return (
