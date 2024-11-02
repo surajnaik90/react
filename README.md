@@ -27,6 +27,7 @@ it will install chocolatey.
 Installing Material UI:
 
 - Run this: npm install @mui/material @emotion/react @emotion/styled
+- npm install @mui/icons-material
 
 Notes:
 
