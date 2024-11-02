@@ -12,6 +12,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import { Container } from '@mui/system';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -66,18 +67,21 @@ const CountrySelector = () => {
   };
 
   return (
+
+    <Container>
+      <Typography variant="h4" gutterBottom mt={10} ml={6}>
+        Ozempic semiglutide
+      </Typography>
+    
     <Box 
-      display="flex" 
-      flexDirection="column" 
-      alignItems="center" 
-      mt={4} 
-      mb={4}
+      display="flex" flexDirection="column" alignItems="flex-start" mt={1} mb={4}
+      ml={6} minHeight="100vh"
     >
-      <Typography variant="h6" mb={2}>
+      <Typography variant="h6" mb={2} mt="10vh" mr={15}>
         Select Your Country
       </Typography>
       
-      <FormControl variant="outlined" sx={{ minWidth: 200, mb: 2 }}>
+      <FormControl variant="outlined" sx={{ minWidth: 300, mb: 2 }} size="small">
         <Select
           value={country}
           onChange={handleCountryChange}
@@ -94,14 +98,11 @@ const CountrySelector = () => {
         </Select>
       </FormControl>
 
-      <Button 
-        variant="contained" 
-        color="primary" 
-        onClick={handleSubmit}
-      >
+      <Button variant="contained" color="primary" onClick={handleSubmit} sx={{ width: '11%'}}>
         Submit
       </Button>
     </Box>
+    </Container>
   );
 };
 
@@ -113,6 +114,7 @@ const Footer = () => {
         p: 2,
         mt: 'auto',
         backgroundColor: (theme) => theme.palette.grey[200],
+        
       }}
     >
       <Box display="flex" justifyContent="center" gap={4}>
@@ -140,7 +142,6 @@ function App() {
   return (
     <div>
     <Header />
-    <h1>Hello React!</h1>
     <CountrySelector />
     <Footer />
     </div>
