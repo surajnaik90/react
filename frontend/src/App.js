@@ -14,6 +14,26 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { Container } from '@mui/system';
 
+const OpenwithCustomImageIcon = () => {
+  const customPageContent = `
+    <html>
+      <head>
+        <title>My Custom Page</title>
+        <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpElEQVR42mJ0YGBg+A8Egwf7B9GE/whBhZyAaAGIMZgvBwAKGYClACDAAWfU7BWwDdABDWgnEoYLTAJM+gHSmx6JwAQWCDowCrgBQU0AuXDJ0FEsAAGrA0O8GVoHkAGGgA1HoUjIDlwFQAizcUBSA2E0BJtAFjEFOG9ZAJxobgNBWAJR2kcHG8YMTDwqACpsHZY0t0JhAAzXnUG5P2EoNyAAjGp1VNUgOgzNLzP3AGmSH5yGYzAoAjFl7ZLSUAfSjMG4AElsC2A9D3MNYzAoDjI3TkoAZoDiBoA6QZFC5a5ALABcABdDqVAAhhDphOSQAK8TApEDEzU+OJoKzMTMORgAAzRgZ7nAAGABDQ00CtX2VDCvEABozQgM0DgFQCO0akJtAQQYmABJRjSNpkJnIhSgwDhwAlMDWg5AnMb8CBgs7FrfLBzAPOAoUoAxEAYMCVAApBJlAYXwCZsPscGMAmGAYRAKQEOsAAn4EgBiwgEIVAKQCTGjWDqFfFA0wa4Gth7kGAE7AcgaHLwYGAICLxQBfS0fsAAAAASUVORK5CYII=" type="image/x-icon">
+      </head>
+      <body>
+        <h1>Welcome to My Custom Page</h1>
+        <p>This page was opened with a custom favicon!</p>
+      </body>
+    </html>
+  `;
+
+  const newWindow = window.open();
+  newWindow.document.write(customPageContent);
+  newWindow.document.close();
+};
+
+
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -63,8 +83,35 @@ const CountrySelector = () => {
   };
 
   const handleSubmit = () => {
-    const pdfUrl = `https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf`; // Path to PDF in the public folder
-    window.open(pdfUrl, '_blank');
+
+    if(country === 'USA') {
+      window.location.href = 'http://cnn.com';
+    }
+    else if(country === 'UK') {
+      const pdfUrl = `https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf`; // Path to PDF in the public folder
+      window.open(pdfUrl, '_blank');
+    }
+    else {
+      const pdfUrl = `https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf`; // Path to PDF in the public folder
+      //window.open(pdfUrl, '_blank');
+      //Since the new window opened doesn't support the window with custom icon this below code is being used
+      const customPageContent = `
+        <html>
+          <head>
+            <title>My Custom Page</title>
+            <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpElEQVR42mJ0YGBg+A8Egwf7B9GE/whBhZyAaAGIMZgvBwAKGYClACDAAWfU7BWwDdABDWgnEoYLTAJM+gHSmx6JwAQWCDowCrgBQU0AuXDJ0FEsAAGrA0O8GVoHkAGGgA1HoUjIDlwFQAizcUBSA2E0BJtAFjEFOG9ZAJxobgNBWAJR2kcHG8YMTDwqACpsHZY0t0JhAAzXnUG5P2EoNyAAjGp1VNUgOgzNLzP3AGmSH5yGYzAoAjFl7ZLSUAfSjMG4AElsC2A9D3MNYzAoDjI3TkoAZoDiBoA6QZFC5a5ALABcABdDqVAAhhDphOSQAK8TApEDEzU+OJoKzMTMORgAAzRgZ7nAAGABDQ00CtX2VDCvEABozQgM0DgFQCO0akJtAQQYmABJRjSNpkJnIhSgwDhwAlMDWg5AnMb8CBgs7FrfLBzAPOAoUoAxEAYMCVAApBJlAYXwCZsPscGMAmGAYRAKQEOsAAn4EgBiwgEIVAKQCTGjWDqFfFA0wa4Gth7kGAE7AcgaHLwYGAICLxQBfS0fsAAAAASUVORK5CYII=" type="image/x-icon">
+          </head>
+          <body>
+            <h1>Welcome to My Custom Page</h1>
+            <p>This page was opened with a custom favicon!</p>
+          </body>
+        </html>
+    `;
+
+      const newWindow = window.open();
+      newWindow.document.write(customPageContent);
+      newWindow.document.close();
+    }
   };
 
   return (

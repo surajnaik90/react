@@ -29,6 +29,10 @@ Installing Material UI:
 - Run this: npm install @mui/material @emotion/react @emotion/styled
 - npm install @mui/icons-material
 
+To deploy to AWS
+
+- npm run build
+
 Notes:
 
 - The .js files you see in src folder are special type and not the typical js files.
