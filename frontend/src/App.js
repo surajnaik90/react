@@ -137,7 +137,7 @@ const CountrySelector = () => {
           inputProps={{ 'aria-label': 'Select Country' }}
         >
           <MenuItem value="">
-            <em>Select Country</em>
+            <em>Country</em>
           </MenuItem>
           <MenuItem value="USA">USA</MenuItem>
           <MenuItem value="Canada">Canada</MenuItem>
@@ -145,6 +145,26 @@ const CountrySelector = () => {
           <MenuItem value="Australia">Australia</MenuItem>
         </Select>
       </FormControl>
+
+      <Typography variant="h6" mb={2}  mr={15}>
+        Select Your Language
+      </Typography>
+      
+      <FormControl variant="outlined" sx={{ minWidth: 300, mb: 2 }} size="small">
+        <Select
+          value={country}
+          onChange={handleCountryChange}
+          displayEmpty
+          inputProps={{ 'aria-label': 'Select Country' }}
+        >
+          <MenuItem value="">
+            <em>Language</em>
+          </MenuItem>
+          <MenuItem value="English">English</MenuItem>
+          <MenuItem value="Arabic">Arabic</MenuItem>
+        </Select>
+      </FormControl>
+
 
       <Button variant="contained" color="primary" onClick={handleSubmit} sx={{ width: '11%', backgroundColor: '#2A918B'}}>
         Submit
